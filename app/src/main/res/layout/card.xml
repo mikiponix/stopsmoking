@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/goal_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="目標" />
+
+            <TextView
+                android:id="@+id/today_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="日付" />
+
+            <TextView
+                android:id="@+id/day_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="何日目" />
+
+            <TextView
+                android:id="@+id/count1_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="何本我慢した" />
+
+            <TextView
+                android:id="@+id/count2_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="何円貯まってる" />
+
+            <TextView
+                android:id="@+id/diary_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="日記" />
+
+            <ImageView
+                android:id="@+id/like_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/heart_pink" />
+
+            <TextView
+                android:id="@+id/lik_count_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
