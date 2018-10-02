@@ -7,9 +7,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieDrawable;
+
+
 
 public class toukou extends AppCompatActivity{
 
@@ -20,11 +21,19 @@ public class toukou extends AppCompatActivity{
     TextView count1Text;
     TextView count2Text;
     Button sendButton;
+    LottieAnimationView animationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.toukou);
+
+        animationView = (LottieAnimationView) findViewById(R.id.animation_view);
+
+        animationView.setAnimation(R.raw.recharge_completed);
+        animationView.setRepeatCount(LottieDrawable.INFINITE);
+        animationView.playAnimation();
 
         goalText = (EditText) findViewById(R.id.goal_card);
         todayText = (EditText) findViewById(R.id.today_card);

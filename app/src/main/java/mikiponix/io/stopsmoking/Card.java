@@ -72,5 +72,10 @@ public class Card {
     public void setLikecount(int likecount) {
         this.likecount = likecount;
     }
+
+
 }
+
+
+
 

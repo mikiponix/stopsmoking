@@ -57,7 +57,7 @@
                 app:srcCompat="@drawable/heart_pink" />
 
             <TextView
-                android:id="@+id/lik_count_text"
+                android:id="@+id/like_count_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView" />

@@ -1,13 +1,15 @@
 package mikiponix.io.stopsmoking;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+
+import java.util.List;
 
 public class CardAdapter extends ArrayAdapter<Card>{
 
@@ -45,9 +47,9 @@ public class CardAdapter extends ArrayAdapter<Card>{
             viewHolder.todayText=(TextView)convertView.findViewById(R.id.today_card);
             viewHolder.dayText=(TextView)convertView.findViewById(R.id.day_card);
             viewHolder.likeImage=(ImageView)convertView.findViewById(R.id.like_image);
-            viewHolder.count1Text(TextView)convertView.findViewById(R.id.count1_card);
-            viewHolder.count2text(TextView)convertView.findViewById(R.id.count2_card);
-            viewHolder.diaryText(TextView)convertView.findViewById(R.id.diary_card);
+            viewHolder.count1Text=(TextView)convertView.findViewById(R.id.count1_card);
+            viewHolder.count2text=(TextView)convertView.findViewById(R.id.count2_card);
+            viewHolder.diaryText=(TextView)convertView.findViewById(R.id.diary_card);
             viewHolder.likecountText=(TextView)convertView.findViewById(R.id.like_count_text);
 
             convertView.setTag(viewHolder);
@@ -59,9 +61,9 @@ public class CardAdapter extends ArrayAdapter<Card>{
         viewHolder.todayText.setText(card.getToday());
         viewHolder.dayText.setText(card.getDay());
         viewHolder.diaryText.setText(card.getDiary());
-        viewHolder.count1Text.setText(card.getCount1());
-        viewHolder.count2text.setText(card.getCount2());
-        viewHolder.likecountText.setText(card.setLikecount());
+        viewHolder.count1Text.setText(String.valueOf(card.getCount1()));
+        viewHolder.count2text.setText(String.valueOf(card.getCount2()));
+        viewHolder.likecountText.setText(String.valueOf(card.getLikecount()));
         viewHolder.likeImage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -75,7 +77,7 @@ public class CardAdapter extends ArrayAdapter<Card>{
         return convertView;
     }
 
-    public void setOnClickListener(View.OnClickListener likeClickListener){
+    public void setOnClickListener(OnClickListener likeClickListener){
         this.likeClickListener = likeClickListener;
     }
 
