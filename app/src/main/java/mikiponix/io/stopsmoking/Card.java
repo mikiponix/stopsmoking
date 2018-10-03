@@ -1,6 +1,7 @@
 package mikiponix.io.stopsmoking;
 
 public class Card {
+    private String key;
     private String goal;
     private String today;
     private String day;
@@ -9,7 +10,8 @@ public class Card {
     private String diary;
     private int likecount;
 
-    public Card(String goal,String today,String day,int count1,int count2,String diary,int likecount){
+    public Card(String key,String goal,String today,String day,int count1,int count2,String diary,int likecount){
+        this.key = key;
         this.goal = goal;
         this.today = today;
         this.day = day;
@@ -18,6 +20,19 @@ public class Card {
         this.diary = diary;
         this.likecount = likecount;
     }
+
+    public Card(){
+
+    }
+
+    public String getKey(){
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
 
     public String getGoal(){
         return goal;

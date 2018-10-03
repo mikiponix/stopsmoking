@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "933811873460",
+    "firebase_url": "https://stopsmoking-fd35f.firebaseio.com",
+    "project_id": "stopsmoking-fd35f",
+    "storage_bucket": "stopsmoking-fd35f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:933811873460:android:1dbe5ae7e77ffc5a",
+        "android_client_info": {
+          "package_name": "mikiponix.io.stopsmoking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "933811873460-mj2cpvrujtu9hbj93pa1r54l3dvomg0q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ5kS_bVYaq9TdwI6MWNyPSXTh6fTwZpE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

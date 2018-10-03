@@ -77,6 +77,16 @@ public class CardAdapter extends ArrayAdapter<Card>{
         return convertView;
     }
 
+    public Card getItemByKey(String key) {
+        for (Card item : cards) {
+            if (item.getKey().equals(key)) {
+                return item;
+            }
+        }
+
+        return null;
+    }
+
     public void setOnClickListener(OnClickListener likeClickListener){
         this.likeClickListener = likeClickListener;
     }

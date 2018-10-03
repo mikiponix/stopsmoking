@@ -6,13 +6,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.LottieDrawable;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 
 
 public class toukou extends AppCompatActivity{
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference reference = database.getReference();
 
     EditText goalText;
     EditText todayText;
@@ -46,7 +54,22 @@ public class toukou extends AppCompatActivity{
         sendButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Toast.makeText(toukou.this,"追加！！", Toast.LENGTH_SHORT).show();
+                String goal = goalText.getText().toString();
+                String today = todayText.getText().toString();
+                String day = dayText.getText().toString();
+                String count1 =count1Text.getText().toString();
+                String count2 =count2Text.getText().toString();
+                String diary = diaryText.getText().toString();
+                String key = reference.push().getKey();
+
+                Card item = new Card(key, goal, today, day, 1,2, diary);
+
+                reference.child(key).setValue(item).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        finish();
+
+
             }
         });
     }
