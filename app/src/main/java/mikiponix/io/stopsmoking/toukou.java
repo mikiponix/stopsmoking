@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class toukou extends AppCompatActivity{
 
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference reference = database.getReference();
 
@@ -30,6 +31,8 @@ public class toukou extends AppCompatActivity{
     TextView count2Text;
     Button sendButton;
     LottieAnimationView animationView;
+    int count1;
+    int count2;
 
 
     @Override
@@ -48,21 +51,23 @@ public class toukou extends AppCompatActivity{
         dayText = (EditText) findViewById(R.id.day_card);
         diaryText = (EditText) findViewById(R.id.diary_card);
         count1Text = (TextView) findViewById(R.id.count1_card);
+        count1 =0;
         count2Text = (TextView) findViewById(R.id.count2_card);
+        count2 =0;
         sendButton = (Button) findViewById(R.id.send_button);
 
-        sendButton.setOnClickListener(new View.OnClickListener(){
+        sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 String goal = goalText.getText().toString();
                 String today = todayText.getText().toString();
                 String day = dayText.getText().toString();
-                String count1 =count1Text.getText().toString();
-                String count2 =count2Text.getText().toString();
+                String count1 = count1Text.getText().toString();
+                String count2 = count2Text.getText().toString();
                 String diary = diaryText.getText().toString();
                 String key = reference.push().getKey();
 
-                Card item = new Card(key, goal, today, day, 1,2, diary);
+                Card item = new Card(key, goal, today, day, 1, 2, diary);
 
                 reference.child(key).setValue(item).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -70,18 +75,38 @@ public class toukou extends AppCompatActivity{
                         finish();
 
 
+                    }
+                });
+
+                @Override
+                public void add (View v){
+                    count1 = count1 + 1;
+                    count1Text.setText(count1 + "本我慢しました！");
+
+                    count2 = count2 + 20;
+                    count2Text.setText(count2 + "円貯まりました！！");
+                }
+
+                public void minus (View v){
+                    count1 = count1 - 1;
+                    count1Text.setText(count1 - "本我慢しました！");
+
+                    count2 = count2 - 20;
+                    count2Text.setText(count2 - "円貯まりました!!");
+                }
+
+
             }
-        });
-    }
 
-}
+        });}}
 
 
 
 
 
 
-///public class MainActivity extends AppCompatActivity {
+
+                ///public class MainActivity extends AppCompatActivity {
 
 //LottieAnimationView animationView;
 

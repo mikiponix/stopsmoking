@@ -53,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:background="@android:color/holo_red_light"
+                android:onClick="add"
                 android:text="+" />
 
             <Button
@@ -61,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:background="@android:color/holo_blue_light"
+                android:onClick="minus"
                 android:text="-" />
 
             <TextView
