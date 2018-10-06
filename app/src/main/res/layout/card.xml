@@ -2,12 +2,16 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="178dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -22,44 +26,64 @@
 
             <TextView
                 android:id="@+id/today_card"
-                android:layout_width="match_parent"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:text="日付" />
 
-            <TextView
-                android:id="@+id/day_card"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="何日目" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/day_card"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="何日目" />
+
+                <ImageView
+                    android:id="@+id/like_image"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/heart_pink" />
+
+                <TextView
+                    android:id="@+id/like_count_text"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="TextView" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/count1_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="何本我慢した" />
 
             <TextView
                 android:id="@+id/count2_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="何円貯まってる" />
 
             <TextView
                 android:id="@+id/diary_card"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
+                android:gravity="center"
                 android:text="日記" />
 
-            <ImageView
-                android:id="@+id/like_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/heart_pink" />
-
             <TextView
-                android:id="@+id/like_count_text"
+                android:id="@+id/advice_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="TextView" />
 
         </LinearLayout>

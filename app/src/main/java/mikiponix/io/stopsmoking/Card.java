@@ -9,8 +9,11 @@ public class Card {
     private int count2;
     private String diary;
     private int likecount;
+    private String advice;
 
-    public Card(String key,String goal,String today,String day,int count1,int count2,String diary,int likecount){
+
+
+    public Card(String key,String goal,String today,String day,int count1,int count2,String diary,int likecount,String advice){
         this.key = key;
         this.goal = goal;
         this.today = today;
@@ -19,9 +22,10 @@ public class Card {
         this.count2 = count2;
         this.diary = diary;
         this.likecount = likecount;
+        this.advice = advice;
     }
 
-    public Card(){
+    public Card(String key, String goal, String today, String day, int i, int i1, String diary,String advice){
 
     }
 
@@ -87,6 +91,12 @@ public class Card {
     public void setLikecount(int likecount) {
         this.likecount = likecount;
     }
+
+    public String getAdvice(){
+        return advice;
+    }
+
+    public void setAdvive(String advice){this.advice = advice;}
 
 
 }

@@ -23,66 +23,90 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="今日の目標"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/today_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="日付"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/day_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:hint="始めて何日"
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/count1_card"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:background="@android:color/holo_red_light"
-                android:onClick="add"
-                android:text="+" />
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:foregroundGravity="center_horizontal|center"
+                android:gravity="center"
+                android:textSize="24sp" />
 
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:background="@android:color/holo_blue_light"
-                android:onClick="minus"
-                android:text="-" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="100dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:background="#fd6f6f"
+                    android:onClick="add"
+                    android:text="+"
+                    android:textSize="30sp" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="100dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="#8addfc"
+                    android:onClick="minus"
+                    android:text="-"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/count2_card"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="fill_vertical|center_horizontal"
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/diary_card"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:gravity="center_vertical"
+                android:hint="日記"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/advice_card"
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
 
             <Button
                 android:id="@+id/send_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#6f72bb84"
+                android:background="#72ed70"
                 android:text="投稿する" />
         </LinearLayout>
 

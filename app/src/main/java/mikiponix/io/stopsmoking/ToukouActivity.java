@@ -1,5 +1,6 @@
 package mikiponix.io.stopsmoking;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -14,14 +15,14 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Random;
 
 
-
-public class toukou extends AppCompatActivity{
+public class ToukouActivity extends AppCompatActivity{
 
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference reference = database.getReference();
+    DatabaseReference reference = database.getReference("User");
 
     EditText goalText;
     EditText todayText;
@@ -33,6 +34,10 @@ public class toukou extends AppCompatActivity{
     LottieAnimationView animationView;
     int count1;
     int count2;
+    int number;
+    TextView adviceText;
+
+    String PRIVATE_KEY;
 
 
     @Override
@@ -55,6 +60,7 @@ public class toukou extends AppCompatActivity{
         count2Text = (TextView) findViewById(R.id.count2_card);
         count2 =0;
         sendButton = (Button) findViewById(R.id.send_button);
+        adviceText = (TextView)findViewById(R.id.advice_card);
 
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,40 +71,59 @@ public class toukou extends AppCompatActivity{
                 String count1 = count1Text.getText().toString();
                 String count2 = count2Text.getText().toString();
                 String diary = diaryText.getText().toString();
+                String advice = adviceText.getText().toString();
                 String key = reference.push().getKey();
 
-                Card item = new Card(key, goal, today, day, 1, 2, diary);
+                Card item = new Card(key, goal, today, day, 1, 2, diary,advice);
 
-                reference.child(key).setValue(item).addOnSuccessListener(new OnSuccessListener<Void>() {
+                reference.child("post").child(key).setValue(item).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        finish();
 
 
                     }
                 });
 
-                @Override
-                public void add (View v){
-                    count1 = count1 + 1;
-                    count1Text.setText(count1 + "本我慢しました！");
+                reference.child("num").setValue("20").addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        finish();
+                    }
+                });
 
-                    count2 = count2 + 20;
-                    count2Text.setText(count2 + "円貯まりました！！");
-                }
 
-                public void minus (View v){
-                    count1 = count1 - 1;
-                    count1Text.setText(count1 - "本我慢しました！");
 
-                    count2 = count2 - 20;
-                    count2Text.setText(count2 - "円貯まりました!!");
-                }
 
 
             }
 
-        });}}
+        });
+
+
+    }
+
+    public void add(View v){
+        count1 = count1 + 1;
+        count1Text.setText(count1 + "本我慢しました！");
+
+//        count2 = count2 + 20;
+        count2Text.setText(count1 * 20 + "円貯まりました！！");
+
+        Random randomAdvice = new Random();
+        adviceText.setText(advice[randomAdvice.nextInt(31)]);
+
+
+    }
+
+    public void minus(View v){
+        count1 = count1 - 1;
+        count1Text.setText(count1 + "本我慢しました！");
+
+//        count2 = count2 - 20;
+        count2Text.setText(count1 * 20 + "円貯まりました!!");
+    }
+
+}
 
 
 
