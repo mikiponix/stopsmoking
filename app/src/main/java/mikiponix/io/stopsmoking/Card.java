@@ -96,9 +96,10 @@ public class Card {
         return advice;
     }
 
-    public void setAdvive(String advice){this.advice = advice;}
 
-
+    public void setAdvice(String advice) {
+        this.advice = advice;
+    }
 }
 
 
