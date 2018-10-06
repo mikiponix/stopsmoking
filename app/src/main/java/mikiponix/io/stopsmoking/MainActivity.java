@@ -27,48 +27,15 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity implements CardAdapter.OnLikeClickListener{
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference reference = database.getReference("User");
+    DatabaseReference reference = database.getReference();
 
 
-    String[] advice={"たまには紅茶にしてみよう",
-            "いいよ、その調子です",
-            "継続は力なり",
-            "大きく深呼吸",
-            "禁煙後20分で血圧や脈が正常化するよ",
-            "１本だけの誘惑に負けないで",
-            "体にいいことしかない！",
-            "辛くなったら頼ってみよう！",
-            "浮いたお金で家族旅行に行こう！",
-            "いつもありがとう！",
-            "今日も元気？一緒に頑張ろう！！",
-            "最初の一週間はつらいけど死なないから大丈夫！",
-            "最近ごはん美味しくない？！味覚や嗅覚、胃の調子が良くなってきてる！",
-            "映画でも観に行こう！",
-            "１本だけお化けにご注意。水の泡に",
-            "5年後肺がんになる確率が半分になるよ",
-            "７２時間後ニコチンが完全に消えるんだよ！続けよう！",
-            "そろそろお金もいい感じじゃない",
-            "吸いたくなったら家族と遊ぼう！",
-            "タバコ臭いが消えた！！！",
-            "ひたすら耐えるのみ！",
-            "味方はたくさんいるよ",
-            "一人じゃないからね",
-            "お金と命があればもう！！",
-            "一緒に長生きしませんか？",
-            "今日のお昼は少し贅沢しよう",
-            "あなたの健康が一番",
-            "２４時間で心臓発作の確率が下がるんだよ！",
-            "２〜３週間で肺活量が３０％回復",
-            "頑張っている人はいつもかっこいい",
-            "つらくなったら相談しよう！甘えじゃない！"};
 
-    String PRIVATE_KEY;
+    //String PRIVATE_KEY;
 
     public ListView listView;
     public FloatingActionButton addButton;
-   //public Button addButtonall;
-   // public TextView tabaccoaddButton;
-   // public TextView moneyaddButton;
+
 
     public CardAdapter adapter;
 
@@ -79,9 +46,7 @@ public class MainActivity extends AppCompatActivity implements CardAdapter.OnLik
 
     listView = (ListView)findViewById(R.id.list_view);
     addButton = (FloatingActionButton)findViewById(R.id.add_button);
-    //addButtonall =(Button)findViewById(R.id.addbutton_all);
-    //tabaccoaddButton =(TextView)findViewById(R.id.all_tabacco);
-    //moneyaddButton =(TextView)findViewById(R.id.all_money);
+
 
     adapter = new CardAdapter(this,0, new ArrayList<Card>());
     adapter.setOnLikeClickListener(this);
@@ -93,22 +58,17 @@ public class MainActivity extends AppCompatActivity implements CardAdapter.OnLik
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(MainActivity.this, ToukouActivity.class);
-            intent.putExtra("key", PRIVATE_KEY);
+            //intent.putExtra("key", PRIVATE_KEY);
             startActivity(intent);
 
         }
     });
 
-    //addButtonall.setOnClickListener(new View.OnClickListener() {
-        //@Override
-        //public void onClick(View v) {
 
 
-        //}
-    //});
 
-
-    reference.child("post").addChildEventListener(new ChildEventListener() {
+    //reference.child("post").addChildEventListener(new ChildEventListener() {
+        reference.addChildEventListener(new ChildEventListener() {
         @Override
         public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
             Card item = dataSnapshot.getValue(Card.class);
@@ -129,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements CardAdapter.OnLik
             item.setCount2(result.getCount2());
             item.setDiary(result.getDiary());
             item.setLikecount(result.getLikecount());
-//            item.setAdvice(result.getAdvice());
+            item.setAdvice(result.getAdvice());
 
             adapter.notifyDataSetChanged();
         }
@@ -151,12 +111,7 @@ public class MainActivity extends AppCompatActivity implements CardAdapter.OnLik
     });
     }
 
-    reference.child("num").addChildEventListner(new ChildEventListener()){
-        @Override
-        public  void onTotalClick(int position){
 
-        }
-    }
 
     @Override
     public void onLikeClick(int position) {

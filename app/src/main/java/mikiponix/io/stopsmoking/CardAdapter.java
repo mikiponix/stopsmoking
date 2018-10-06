@@ -112,12 +112,7 @@ public class CardAdapter extends ArrayAdapter<Card>{
         return convertView;
     }
 
-    public void advice(View v){
 
-        Random randomAdvice = new Random();
-        int index = randomAdvice.nextInt(31);
-
-    }
 
     public Card getItemByKey(String key) {
         for (Card item : cards) {

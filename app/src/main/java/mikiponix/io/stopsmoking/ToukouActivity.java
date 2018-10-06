@@ -22,7 +22,7 @@ public class ToukouActivity extends AppCompatActivity{
 
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference reference = database.getReference("User");
+    DatabaseReference reference = database.getReference();
 
     EditText goalText;
     EditText todayText;
@@ -37,7 +37,7 @@ public class ToukouActivity extends AppCompatActivity{
     int number;
     TextView adviceText;
 
-    String PRIVATE_KEY;
+    //String PRIVATE_KEY;
 
 
     @Override
@@ -76,20 +76,25 @@ public class ToukouActivity extends AppCompatActivity{
 
                 Card item = new Card(key, goal, today, day, 1, 2, diary,advice);
 
-                reference.child("post").child(key).setValue(item).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-
-
-                    }
-                });
-
-                reference.child("num").setValue("20").addOnSuccessListener(new OnSuccessListener<Void>() {
+                reference.child(key).setValue(item).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         finish();
-                    }
-                });
+
+                //reference.child("post").child(key).setValue(item).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    //@Override
+                    //public void onSuccess(Void aVoid) {
+
+
+                    //}
+                //});
+
+                //reference.child("num").setValue("20").addOnSuccessListener(new OnSuccessListener<Void>() {
+                    //@Override
+                    //public void onSuccess(Void aVoid) {
+                        //finish();
+                    //}
+               // });
 
 
 
@@ -123,7 +128,7 @@ public class ToukouActivity extends AppCompatActivity{
         count2Text.setText(count1 * 20 + "円貯まりました!!");
     }
 
-}
+
 
 
 
