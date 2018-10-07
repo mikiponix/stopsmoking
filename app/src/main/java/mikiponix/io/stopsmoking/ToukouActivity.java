@@ -33,6 +33,7 @@ public class ToukouActivity extends AppCompatActivity {
     Button sendButton;
     LottieAnimationView animationView;
     int count1;
+    int count2;
     int number;
     TextView adviceText;
 
@@ -80,7 +81,6 @@ public class ToukouActivity extends AppCompatActivity {
 
 
         animationView = (LottieAnimationView) findViewById(R.id.animation_view);
-
         animationView.setAnimation(R.raw.recharge_completed);
         animationView.setRepeatCount(LottieDrawable.INFINITE);
         animationView.playAnimation();
