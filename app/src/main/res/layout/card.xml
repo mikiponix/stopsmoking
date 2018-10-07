@@ -21,14 +21,12 @@
             <TextView
                 android:id="@+id/goal_card"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="目標" />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/today_card"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="日付" />
+                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -39,8 +37,7 @@
                     android:id="@+id/day_card"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="何日目" />
+                    android:layout_weight="1" />
 
                 <ImageView
                     android:id="@+id/like_image"
@@ -54,37 +51,32 @@
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="TextView" />
+                    android:gravity="center" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/count1_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="何本我慢した" />
+                android:gravity="center" />
 
             <TextView
                 android:id="@+id/count2_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="何円貯まってる" />
+                android:gravity="center" />
 
             <TextView
                 android:id="@+id/diary_card"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:gravity="center"
-                android:text="日記" />
+                android:gravity="center" />
 
             <TextView
                 android:id="@+id/advice_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="TextView" />
+                android:gravity="center" />
 
         </LinearLayout>
     </RelativeLayout>

@@ -33,7 +33,6 @@ public class ToukouActivity extends AppCompatActivity {
     Button sendButton;
     LottieAnimationView animationView;
     int count1;
-    int count2;
     int number;
     TextView adviceText;
 
@@ -51,7 +50,8 @@ public class ToukouActivity extends AppCompatActivity {
             "いつもありがとう！",
             "今日も元気？一緒に頑張ろう！！",
             "最初の一週間はつらいけど死なないから大丈夫！",
-            "最近ごはん美味しくない？！味覚や嗅覚、胃の調子が良くなってきてる！",
+            "最近ごはん美味しくない？！",
+            "味覚や嗅覚、胃の調子が良くなってきてる！",
             "映画でも観に行こう！",
             "１本だけお化けにご注意。水の泡に",
             "5年後肺がんになる確率が半分になるよ",
@@ -149,15 +149,19 @@ public class ToukouActivity extends AppCompatActivity {
         count1Text.setText(count1 + "本我慢しました！");
 
         count2Text.setText(count1 * 20 + "円貯まりました！！");
+
         Random randomName = new Random ();
-        int index = randomName.nextInt(31);
-        String name =[index];
-        adviceText.setText(advice[index]);
+        int index= randomName.nextInt(32);
+        String advicename = advice[index];
+        adviceText.setText(advicename);
 
     }
 
     public void minus(View v){
-        count2Text.setText(count1 *20 + "円貯まりました！！");
+        count1 = count1 -1;
+        count1Text.setText(count1 + "本我慢しました！");
+
+        count2Text.setText(count1 * 20 + "円貯まりました");
     }
 
 
