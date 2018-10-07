@@ -13,16 +13,19 @@ public class Card {
 
 
 
-    public Card(String key,String goal,String today,String day,int count1,int count2,String diary,int likecount,String advice){
-        this.key = key;
-        this.goal = goal;
-        this.today = today;
-        this.day = day;
-        this.count1 = count1;
-        this.count2 = count2;
-        this.diary = diary;
-        this.likecount = likecount;
-        this.advice = advice;
+
+
+
+    public Card(String key, String goal, String today, String day, int i, int i1, String diary, String advice) {
+        this.key=key;
+        this.goal=goal;
+        this.day=day;
+        this.count1=count1;
+        this.count2=count2;
+        this.diary=diary;
+        this.likecount=likecount;
+        this.advice=advice;
+
     }
 
     public Card(){
