@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GoalActivity">
+
+    <RelativeLayout
+        android:layout_width="409dp"
+        android:layout_height="602dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/kirakiraanimation_view"
+                android:layout_width="match_parent"
+                android:layout_height="70dp" />
+
+
+            <TextView
+                android:id="@+id/d1_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_dark"
+                android:text="1日後" />
+
+            <TextView
+                android:id="@+id/d1_ad_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="・心臓発作の危険性が低下・離脱症状がもっと辛くなる・ここを我慢して！" />
+
+            <TextView
+                android:id="@+id/d2_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_dark"
+                android:text="2日後" />
+
+            <TextView
+                android:id="@+id/d2_ad_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="・味覚や嗅覚、胃の働きの正常化が始まる・ご飯が美味しく感じられる！！" />
+
+            <TextView
+                android:id="@+id/d3_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_red_dark"
+                android:text="3日後" />
+
+            <TextView
+                android:id="@+id/d3_ad_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="・肺活量や気管支の機能が回復し、運動機能が大きく回復・試しにランニングしてみよう！・離脱症状も緩和・これを乗り越えれば、タバコを吸いたい欲求とお別れ" />
+
+            <TextView
+                android:id="@+id/w1_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_orange_light"
+                android:text="1週間後" />
+
+            <TextView
+                android:id="@+id/w1_ad_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="・質の高い睡眠がゲット・よく乗り切った！" />
+
+            <TextView
+                android:id="@+id/w2_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_orange_light"
+                android:text="2週間後" />
+
+            <TextView
+                android:id="@+id/w2_ad_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="・肌が改善してくる" />
+
+            <TextView
+                android:id="@+id/m9_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_orange_light"
+                android:text="１〜９ヶ月後" />
+
+            <TextView
+                android:id="@+id/m9_ad_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="・離脱症状が軽減し、日常生活が送りやすくなる・禁煙の第一段階が成功・油断禁物・一本お化けに注意" />
+
+            <TextView
+                android:id="@+id/y1_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_orange_dark"
+                android:text="1年後" />
+
+            <TextView
+                android:id="@+id/y1_ad_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="・咳、痰、息切れの症状が改善・体のだるさや疲れやすさも改善・ほとんど禁煙は成功したと言える！！" />
+
+            <TextView
+                android:id="@+id/y4_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_green_light"
+                android:text="２〜4年後" />
+
+            <TextView
+                android:id="@+id/y4_ad_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="・狭心症、心筋梗塞などのリスクが３５％減少・脳梗塞のリスクも明らかに減少・この時期でも油断するとタバコに手が出ることがある！" />
+
+            <TextView
+                android:id="@+id/y9_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/holo_green_dark"
+                android:text="5~9年後" />
+
+            <TextView
+                android:id="@+id/y9_ad_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="・おめでとう！・肺ガンのリスクもかなり減少" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/modoru2_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:srcCompat="@android:drawable/ic_menu_revert" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

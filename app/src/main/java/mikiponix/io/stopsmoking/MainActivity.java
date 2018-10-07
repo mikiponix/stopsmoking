@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements CardAdapter.OnLik
 
     public ListView listView;
     public FloatingActionButton addButton;
+    public FloatingActionButton starButton;
+    public FloatingActionButton maingoalButton;
 
 
     public CardAdapter adapter;
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements CardAdapter.OnLik
 
     listView = (ListView)findViewById(R.id.list_view);
     addButton = (FloatingActionButton)findViewById(R.id.add_button);
+    starButton = (FloatingActionButton)findViewById(R.id.star_button);
+    maingoalButton = (FloatingActionButton)findViewById(R.id.maingoal_button);
 
 
     adapter = new CardAdapter(this,0, new ArrayList<Card>());
@@ -62,6 +66,31 @@ public class MainActivity extends AppCompatActivity implements CardAdapter.OnLik
 
         }
     });
+
+    starButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(MainActivity.this, StarActivity.class);
+            startActivity(intent);
+        }
+    });
+
+    maingoalButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view){
+            Intent intent = new Intent(MainActivity.this,GoalActivity.class);
+            startActivity(intent);
+        }
+    });
+
+
+
+    //@Override
+     //public void StarClick(View v){
+         //Intent intent =new Intent(MainActivity.this,StarActivity.class);
+         //startActivity(intent);
+        //}
+
 
 
 
