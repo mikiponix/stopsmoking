@@ -65,8 +65,8 @@ public class CardAdapter extends ArrayAdapter<Card>{
         viewHolder.todayText.setText(card.getToday());
         viewHolder.dayText.setText(card.getDay());
         viewHolder.diaryText.setText(card.getDiary());
-        viewHolder.count1Text.setText(card.getCount1());
-        viewHolder.count2text.setText(card.getCount2());
+        viewHolder.count1Text.setText(String.valueOf(card.getCount1()));
+        viewHolder.count2text.setText(String.valueOf(card.getCount1()));
         viewHolder.adviceText.setText(card.getAdvice()); // 後々ランダム
         viewHolder.likecountText.setText(String.valueOf(card.getLikecount()));
         viewHolder.likeImage.setOnClickListener(new View.OnClickListener(){

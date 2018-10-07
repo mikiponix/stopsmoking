@@ -33,7 +33,7 @@ public class ToukouActivity extends AppCompatActivity {
     Button sendButton;
     LottieAnimationView animationView;
     int count1;
-    int count2;
+    //int count2;
     int number;
     TextView adviceText;
 
@@ -152,13 +152,14 @@ public class ToukouActivity extends AppCompatActivity {
 
         Random randomName = new Random ();
         int index= randomName.nextInt(32);
-        String advicename = advice[index];
-        adviceText.setText(advicename);
+        //String advicename = advice[index];
+        //adviceText.setText(advicename);
+        adviceText.setText(advice[index]);
 
     }
 
     public void minus(View v){
-        count1 = count1 -1;
+        count1 = count1 - 1;
         count1Text.setText(count1 + "本我慢しました！");
 
         count2Text.setText(count1 * 20 + "円貯まりました");
