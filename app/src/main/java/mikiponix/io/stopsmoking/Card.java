@@ -25,7 +25,7 @@ public class Card {
         this.advice = advice;
     }
 
-    public Card(String key, String goal, String today, String day, int i, int i1, String diary,String advice){
+    public Card(){
 
     }
 
