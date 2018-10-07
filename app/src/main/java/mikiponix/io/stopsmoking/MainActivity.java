@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements CardAdapter.OnLik
 
     adapter = new CardAdapter(this,0, new ArrayList<Card>());
     adapter.setOnLikeClickListener(this);
-
     listView.setAdapter(adapter);
 
 

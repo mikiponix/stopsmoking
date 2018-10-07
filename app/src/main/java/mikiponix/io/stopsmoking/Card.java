@@ -100,7 +100,7 @@ public class Card {
     public void setAdvice(String advice) {
         this.advice = advice;
     }
-}
+    }
 
 
 

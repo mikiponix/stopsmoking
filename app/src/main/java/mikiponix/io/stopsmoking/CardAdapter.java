@@ -94,8 +94,8 @@ public class CardAdapter extends ArrayAdapter<Card>{
         return null;
     }
 
-    public void setOnLikeClickListener(OnLikeClickListener onClickListener){
-        this.likeClickListener = onClickListener;
+    public void setOnLikeClickListener(OnLikeClickListener likeClickListener){
+        this.likeClickListener = likeClickListener;
     }
 
     static  class ViewHolder{
